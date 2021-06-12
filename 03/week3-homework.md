@@ -15,4 +15,4 @@ Done with command: `aws s3 sync . s3://website-single-template-website-dev-s3web
 Result: [`content-upload.log`](content-upload.log)
 
 ### Final result
-gaahttp://website-single-template-website-dev-s3website-169yyhm8d7sc4.s3-website.eu-central-1.amazonaws.com
+http://website-single-template-website-dev-s3website-169yyhm8d7sc4.s3-website.eu-central-1.amazonaws.com
