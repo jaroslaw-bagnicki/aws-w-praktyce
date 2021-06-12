@@ -1,0 +1,104 @@
+{
+    "StackEvents": [
+        {
+            "StackId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/website-single-template-website-dev/504c09e0-cb43-11eb-9b8f-06048e6000c4",
+            "EventId": "6535e3d0-cb43-11eb-86a8-06618e75f5b2",
+            "StackName": "website-single-template-website-dev",
+            "LogicalResourceId": "website-single-template-website-dev",
+            "PhysicalResourceId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/website-single-template-website-dev/504c09e0-cb43-11eb-9b8f-06048e6000c4",
+            "ResourceType": "AWS::CloudFormation::Stack",
+            "Timestamp": "2021-06-12T05:59:48.610000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE"
+        },
+        {
+            "StackId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/website-single-template-website-dev/504c09e0-cb43-11eb-9b8f-06048e6000c4",
+            "EventId": "S3WebsitePolicy-CREATE_COMPLETE-2021-06-12T05:59:47.353Z",
+            "StackName": "website-single-template-website-dev",
+            "LogicalResourceId": "S3WebsitePolicy",
+            "PhysicalResourceId": "website-single-template-website-S3WebsitePolicy-10QNNMVJAHWBB",
+            "ResourceType": "AWS::S3::BucketPolicy",
+            "Timestamp": "2021-06-12T05:59:47.353000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "ResourceProperties": "{\"Bucket\":\"website-single-template-website-dev-s3website-169yyhm8d7sc4\",\"PolicyDocument\":{\"Version\":\"2012-10-17\",\"Statement\":[{\"Action\":\"s3:GetObject\",\"Resource\":\"arn:aws:s3:::website-single-template-website-dev-s3website-169yyhm8d7sc4/*\",\"Effect\":\"Allow\",\"Principal\":\"*\",\"Sid\":\"PublicReadForGetBucketObjects\"}],\"Id\":\"S3WebsitePolicy\"}}"
+        },
+        {
+            "StackId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/website-single-template-website-dev/504c09e0-cb43-11eb-9b8f-06048e6000c4",
+            "EventId": "S3WebsitePolicy-CREATE_IN_PROGRESS-2021-06-12T05:59:47.255Z",
+            "StackName": "website-single-template-website-dev",
+            "LogicalResourceId": "S3WebsitePolicy",
+            "PhysicalResourceId": "website-single-template-website-S3WebsitePolicy-10QNNMVJAHWBB",
+            "ResourceType": "AWS::S3::BucketPolicy",
+            "Timestamp": "2021-06-12T05:59:47.255000+00:00",
+            "ResourceStatus": "CREATE_IN_PROGRESS",
+            "ResourceStatusReason": "Resource creation Initiated",
+            "ResourceProperties": "{\"Bucket\":\"website-single-template-website-dev-s3website-169yyhm8d7sc4\",\"PolicyDocument\":{\"Version\":\"2012-10-17\",\"Statement\":[{\"Action\":\"s3:GetObject\",\"Resource\":\"arn:aws:s3:::website-single-template-website-dev-s3website-169yyhm8d7sc4/*\",\"Effect\":\"Allow\",\"Principal\":\"*\",\"Sid\":\"PublicReadForGetBucketObjects\"}],\"Id\":\"S3WebsitePolicy\"}}"
+        },
+        {
+            "StackId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/website-single-template-website-dev/504c09e0-cb43-11eb-9b8f-06048e6000c4",
+            "EventId": "S3WebsitePolicy-CREATE_IN_PROGRESS-2021-06-12T05:59:46.349Z",
+            "StackName": "website-single-template-website-dev",
+            "LogicalResourceId": "S3WebsitePolicy",
+            "PhysicalResourceId": "",
+            "ResourceType": "AWS::S3::BucketPolicy",
+            "Timestamp": "2021-06-12T05:59:46.349000+00:00",
+            "ResourceStatus": "CREATE_IN_PROGRESS",
+            "ResourceProperties": "{\"Bucket\":\"website-single-template-website-dev-s3website-169yyhm8d7sc4\",\"PolicyDocument\":{\"Version\":\"2012-10-17\",\"Statement\":[{\"Action\":\"s3:GetObject\",\"Resource\":\"arn:aws:s3:::website-single-template-website-dev-s3website-169yyhm8d7sc4/*\",\"Effect\":\"Allow\",\"Principal\":\"*\",\"Sid\":\"PublicReadForGetBucketObjects\"}],\"Id\":\"S3WebsitePolicy\"}}"
+        },
+        {
+            "StackId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/website-single-template-website-dev/504c09e0-cb43-11eb-9b8f-06048e6000c4",
+            "EventId": "S3Website-CREATE_COMPLETE-2021-06-12T05:59:44.858Z",
+            "StackName": "website-single-template-website-dev",
+            "LogicalResourceId": "S3Website",
+            "PhysicalResourceId": "website-single-template-website-dev-s3website-169yyhm8d7sc4",
+            "ResourceType": "AWS::S3::Bucket",
+            "Timestamp": "2021-06-12T05:59:44.858000+00:00",
+            "ResourceStatus": "CREATE_COMPLETE",
+            "ResourceProperties": "{\"WebsiteConfiguration\":{\"IndexDocument\":\"index.html\",\"ErrorDocument\":\"error.html\"},\"Tags\":[{\"Value\":\"website-dev-single-template-static-s3-website\",\"Key\":\"Name\"}]}"
+        },
+        {
+            "StackId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/website-single-template-website-dev/504c09e0-cb43-11eb-9b8f-06048e6000c4",
+            "EventId": "S3Website-CREATE_IN_PROGRESS-2021-06-12T05:59:23.850Z",
+            "StackName": "website-single-template-website-dev",
+            "LogicalResourceId": "S3Website",
+            "PhysicalResourceId": "website-single-template-website-dev-s3website-169yyhm8d7sc4",
+            "ResourceType": "AWS::S3::Bucket",
+            "Timestamp": "2021-06-12T05:59:23.850000+00:00",
+            "ResourceStatus": "CREATE_IN_PROGRESS",
+            "ResourceStatusReason": "Resource creation Initiated",
+            "ResourceProperties": "{\"WebsiteConfiguration\":{\"IndexDocument\":\"index.html\",\"ErrorDocument\":\"error.html\"},\"Tags\":[{\"Value\":\"website-dev-single-template-static-s3-website\",\"Key\":\"Name\"}]}"
+        },
+        {
+            "StackId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/website-single-template-website-dev/504c09e0-cb43-11eb-9b8f-06048e6000c4",
+            "EventId": "S3Website-CREATE_IN_PROGRESS-2021-06-12T05:59:22.794Z",
+            "StackName": "website-single-template-website-dev",
+            "LogicalResourceId": "S3Website",
+            "PhysicalResourceId": "",
+            "ResourceType": "AWS::S3::Bucket",
+            "Timestamp": "2021-06-12T05:59:22.794000+00:00",
+            "ResourceStatus": "CREATE_IN_PROGRESS",
+            "ResourceProperties": "{\"WebsiteConfiguration\":{\"IndexDocument\":\"index.html\",\"ErrorDocument\":\"error.html\"},\"Tags\":[{\"Value\":\"website-dev-single-template-static-s3-website\",\"Key\":\"Name\"}]}"
+        },
+        {
+            "StackId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/website-single-template-website-dev/504c09e0-cb43-11eb-9b8f-06048e6000c4",
+            "EventId": "53c4dcf0-cb43-11eb-9fda-0205e9911af8",
+            "StackName": "website-single-template-website-dev",
+            "LogicalResourceId": "website-single-template-website-dev",
+            "PhysicalResourceId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/website-single-template-website-dev/504c09e0-cb43-11eb-9b8f-06048e6000c4",
+            "ResourceType": "AWS::CloudFormation::Stack",
+            "Timestamp": "2021-06-12T05:59:19.340000+00:00",
+            "ResourceStatus": "CREATE_IN_PROGRESS",
+            "ResourceStatusReason": "User Initiated"
+        },
+        {
+            "StackId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/website-single-template-website-dev/504c09e0-cb43-11eb-9b8f-06048e6000c4",
+            "EventId": "504b6da0-cb43-11eb-9b8f-06048e6000c4",
+            "StackName": "website-single-template-website-dev",
+            "LogicalResourceId": "website-single-template-website-dev",
+            "PhysicalResourceId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/website-single-template-website-dev/504c09e0-cb43-11eb-9b8f-06048e6000c4",
+            "ResourceType": "AWS::CloudFormation::Stack",
+            "Timestamp": "2021-06-12T05:59:13.624000+00:00",
+            "ResourceStatus": "REVIEW_IN_PROGRESS",
+            "ResourceStatusReason": "User Initiated"
+        }
+    ]
+}

@@ -2,7 +2,7 @@
 
 PROJECT="website"
 STAGE="dev"
-REGION="eu-west-1"
+REGION="eu-central-1"
 
 ######### single-template ###########
 
@@ -13,10 +13,10 @@ STACK="website"
 
 outputs="aws cloudformation describe-stacks \
     --stack-name $PROJECT-$COMPONENT-$STACK-$STAGE \
-    --output text \
+    --output yaml \
     --query Stacks[].Outputs[] \
     --region $REGION"
 
-echo "$outputs"
+# echo "$outputs"
 
 $outputs

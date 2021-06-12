@@ -6,7 +6,7 @@
 
 PROJECT="website"
 STAGE="dev"
-REGION="eu-west-1"
+REGION="eu-central-1"
 
 ######### single-template ###########
 
