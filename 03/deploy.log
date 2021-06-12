@@ -1,0 +1,5 @@
+aws cloudformation deploy     --template-file website/single-template/templates/website.yaml     --stack-name website-single-template-website-dev     --no-fail-on-empty-changeset     --parameter-overrides Project=website Stage=dev Component=single-template     --region eu-central-1     --tags Project=website Stage=dev Component=single-template
+
+Waiting for changeset to be created..
+Waiting for stack create/update to complete
+Successfully created/updated stack - website-single-template-website-dev

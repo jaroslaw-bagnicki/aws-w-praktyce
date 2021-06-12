@@ -1,0 +1,6 @@
+- Description: URL for website hosted on S3
+  OutputKey: WebsiteURL
+  OutputValue: http://website-single-template-website-dev-s3website-169yyhm8d7sc4.s3-website.eu-central-1.amazonaws.com
+- Description: S3 Bucket Name
+  OutputKey: S3BucketName
+  OutputValue: website-single-template-website-dev-s3website-169yyhm8d7sc4
