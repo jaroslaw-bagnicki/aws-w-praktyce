@@ -20,16 +20,6 @@ if (!(Test-Path $parametersPath)) {
 
 $stackName = "$Project-$Component-$Stack-$Stage"
 
-$parameterOverridesArray = Get-Content $parametersPath | ConvertFrom-Json
-$parameterOverridesHastable = @{}
-$parameterOverridesArray | ForEach-Object { $parameterOverridesHastable[$_.ParameterKey] = $_.ParameterValue }
-
-$temp = @{
-    Project = 'website'
-    Stage = 'dev'
-    Component = 'single-tempalate'
-}
-
 $result = aws cloudformation deploy `
     --template-file $templatePath.Path`
     --stack-name $stackName `
