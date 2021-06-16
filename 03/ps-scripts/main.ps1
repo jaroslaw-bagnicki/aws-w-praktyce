@@ -1,4 +1,5 @@
 Import-Module AWS.Tools.Common
+Import-Module AWS.Tools.CloudFormation
 . $PSScriptRoot/Deploy-CFNTemplate.ps1
 . $PSScriptRoot/Get-CFNStackOutput.ps1
 
@@ -22,10 +23,15 @@ $deployResult = Deploy-CFNTemplate `
 
 Write-Output $deployResult
 
-$stackOutputs = Get-CFNStackOutput `
-    -Project $projectName  `
-    -Component $componentName `
-    -Stack $stackName `
-    -Stage $stage
+$stackFullName = "$projectName-$componentName-$stackName-$stage"
+
+$stackOutputs = Get-CFNStack -StackName $stackFullName `
+| Select-Object -ExpandProperty Outputs
 
 Write-Output $stackOutputs
+ConvertTo-Json $stackOutputs >> "./stack-outputs.json"
+
+$stackEvents = Get-CFNStackEvent -StackName $stackFullName
+Write-Output $stackEvents
+ConvertTo-Json $stackEvents >> "./stack-events.json"
+Write-Output "Stack events were exported to 'events.log' file."
