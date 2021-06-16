@@ -1,12 +1,22 @@
-. $PSScriptRoot/Deploy-CFTemplate.ps1
+Import-Module AWS.Tools.Common
+. $PSScriptRoot/Deploy-CFNTemplate.ps1
 
-awsume.ps1 jbagnicki
+$regions = Get-DefaultAWSRegion
+$projectName = 'website'
+$componentName = 'single-template'
+$stackName = 'website'
+$stage = 'dev'
+$templateFilename = 'website'
+$parametersFilename = 'website'
 
-Deploy-CFTemplate `
-    -Project website `
-    -Stage dev `
-    -Region eu-central-1 `
-    -Component single-template `
-    -Stack website `
-    -Template website `
-    -Parameters website
+
+$deployResult = Deploy-CFNTemplate `
+    -Region $regions `
+    -Project $projectName  `
+    -Component $componentName `
+    -Stack $stackName `
+    -Stage $stage `
+    -Template $templateFilename `
+    -Parameters $parametersFilename
+
+Write-Output $deployResult

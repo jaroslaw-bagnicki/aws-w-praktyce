@@ -1,4 +1,4 @@
-Function Deploy-CFTemplate(
+function Deploy-CFNTemplate(
     [string] $Project,
     [string] $Stage,
     [string] $Region,
