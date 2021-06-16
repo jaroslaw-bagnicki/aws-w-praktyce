@@ -1,5 +1,6 @@
 Import-Module AWS.Tools.Common
 . $PSScriptRoot/Deploy-CFNTemplate.ps1
+. $PSScriptRoot/Get-CFNStackOutput.ps1
 
 $regions = Get-DefaultAWSRegion
 $projectName = 'website'
@@ -20,3 +21,11 @@ $deployResult = Deploy-CFNTemplate `
     -Parameters $parametersFilename
 
 Write-Output $deployResult
+
+$stackOutputs = Get-CFNStackOutput `
+    -Project $projectName  `
+    -Component $componentName `
+    -Stack $stackName `
+    -Stage $stage
+
+Write-Output $stackOutputs
