@@ -28,10 +28,9 @@ $stackFullName = "$projectName-$componentName-$stackName-$stage"
 $stackOutputs = Get-CFNStack -StackName $stackFullName `
 | Select-Object -ExpandProperty Outputs
 
-Write-Output $stackOutputs
-ConvertTo-Json $stackOutputs >> "./stack-outputs.json"
+ConvertTo-Json $stackOutputs | Out-File "./stack-outputs.json"
+Write-Output "Stack outputs were exported to 'stack-outputs.json' file."
 
 $stackEvents = Get-CFNStackEvent -StackName $stackFullName
-Write-Output $stackEvents
-ConvertTo-Json $stackEvents >> "./stack-events.json"
-Write-Output "Stack events were exported to 'events.log' file."
+ConvertTo-Json $stackEvents | Out-File "./stack-events.json"
+Write-Output "Stack outputs were exported to 'stack-events.json' file."
