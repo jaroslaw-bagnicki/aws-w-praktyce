@@ -1,0 +1,14 @@
+[
+    {
+        "ParameterKey": "Project",
+        "ParameterValue": "website"
+    },
+    {
+        "ParameterKey": "Stage",
+        "ParameterValue": "dev"
+    },
+    {
+        "ParameterKey": "Component",
+        "ParameterValue": "nested"
+    }
+]
