@@ -3,12 +3,12 @@
     "Description": "URL for website hosted on S3",
     "ExportName": null,
     "OutputKey": "WebsiteURL",
-    "OutputValue": "http://website-single-template-website-dev-s3website-169yyhm8d7sc4.s3-website.eu-central-1.amazonaws.com"
+    "OutputValue": "http://website-single-template-website-dev-s3website-1lj5rwy9x2on5.s3-website.eu-central-1.amazonaws.com"
   },
   {
     "Description": "S3 Bucket Name",
     "ExportName": null,
     "OutputKey": "S3BucketName",
-    "OutputValue": "website-single-template-website-dev-s3website-169yyhm8d7sc4"
+    "OutputValue": "website-single-template-website-dev-s3website-1lj5rwy9x2on5"
   }
 ]
