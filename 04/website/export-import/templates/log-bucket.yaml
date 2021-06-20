@@ -13,7 +13,10 @@ Parameters:
   Stage:
     Description: Stage name
     Type: String
-    AllowedPattern: ^[a-z][a-zA-Z0-9-]{2,15}$
+    AllowedValues:
+      - dev
+      - qa
+      - prod
 
 Resources:
   S3LogBucket:
