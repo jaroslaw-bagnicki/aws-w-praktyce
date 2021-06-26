@@ -1,0 +1,14 @@
+[
+  {
+    "Description": "URL for website hosted on S3",
+    "ExportName": null,
+    "OutputKey": "WebsiteURL",
+    "OutputValue": "http://website-export-import-website-dev-s3website-tf4tqgsrz84p.s3-website.eu-central-1.amazonaws.com"
+  },
+  {
+    "Description": "S3 Bucket Name",
+    "ExportName": null,
+    "OutputKey": "S3BucketName",
+    "OutputValue": "website-export-import-website-dev-s3website-tf4tqgsrz84p"
+  }
+]

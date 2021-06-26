@@ -1,0 +1,78 @@
+{
+  "Capabilities": [
+    "CAPABILITY_NAMED_IAM"
+  ],
+  "ChangeSetId": "arn:aws:cloudformation:eu-central-1:398814723438:changeSet/awscli-cloudformation-package-deploy-1623996160/14fef9c6-0c35-4c09-ba28-dbc6b38cc5f8",
+  "CreationTime": "2021-06-18T08:02:42.313+02:00",
+  "DeletionTime": "0001-01-01T00:00:00",
+  "Description": "Template for static s3 website",
+  "DisableRollback": false,
+  "DriftInformation": {
+    "LastCheckTimestamp": "0001-01-01T00:00:00",
+    "StackDriftStatus": {
+      "Value": "NOT_CHECKED"
+    }
+  },
+  "EnableTerminationProtection": false,
+  "LastUpdatedTime": "2021-06-18T08:02:48.188+02:00",
+  "NotificationARNs": [],
+  "Outputs": [
+    {
+      "Description": "URL for website hosted on S3",
+      "ExportName": null,
+      "OutputKey": "WebsiteURL",
+      "OutputValue": "http://website-export-import-website-dev-s3website-tf4tqgsrz84p.s3-website.eu-central-1.amazonaws.com"
+    },
+    {
+      "Description": "S3 Bucket Name",
+      "ExportName": null,
+      "OutputKey": "S3BucketName",
+      "OutputValue": "website-export-import-website-dev-s3website-tf4tqgsrz84p"
+    }
+  ],
+  "Parameters": [
+    {
+      "ParameterKey": "Project",
+      "ParameterValue": "website",
+      "ResolvedValue": null,
+      "UsePreviousValue": false
+    },
+    {
+      "ParameterKey": "Stage",
+      "ParameterValue": "dev",
+      "ResolvedValue": null,
+      "UsePreviousValue": false
+    },
+    {
+      "ParameterKey": "Component",
+      "ParameterValue": "export-import",
+      "ResolvedValue": null,
+      "UsePreviousValue": false
+    }
+  ],
+  "ParentId": null,
+  "RoleARN": null,
+  "RollbackConfiguration": null,
+  "RootId": null,
+  "StackId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/website-export-import-website-dev/cb286d50-cffa-11eb-a854-0693fffb741a",
+  "StackName": "website-export-import-website-dev",
+  "StackStatus": {
+    "Value": "CREATE_COMPLETE"
+  },
+  "StackStatusReason": null,
+  "Tags": [
+    {
+      "Key": "Project",
+      "Value": "website"
+    },
+    {
+      "Key": "Stage",
+      "Value": "dev"
+    },
+    {
+      "Key": "Component",
+      "Value": "export-import"
+    }
+  ],
+  "TimeoutInMinutes": 0
+}

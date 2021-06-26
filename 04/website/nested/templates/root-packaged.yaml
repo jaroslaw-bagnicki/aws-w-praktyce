@@ -1,0 +1,41 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Parameters:
+  Project:
+    Description: Project name
+    Type: String
+    AllowedPattern: ^[a-z][a-zA-Z0-9-]{3,20}$
+  Component:
+    Description: Name of the component
+    Type: String
+    AllowedPattern: ^[a-z][a-zA-Z0-9-]{2,15}$
+  Stage:
+    Description: Stage name
+    Type: String
+    AllowedPattern: ^[a-z][a-zA-Z0-9-]{2,15}$
+Resources:
+  LogBucket:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: https://s3.eu-central-1.amazonaws.com/website-nested-artifact-dev-artifactbucket-1sqm99yyl45ca/f1140e29e903dcfb35c82117dadc55e4.template
+      Parameters:
+        Project:
+          Ref: Project
+        Component:
+          Ref: Component
+        Stage:
+          Ref: Stage
+  Website:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: https://s3.eu-central-1.amazonaws.com/website-nested-artifact-dev-artifactbucket-1sqm99yyl45ca/8027fb3ecb6fb40e466a8186bde5595a.template
+      Parameters:
+        Project:
+          Ref: Project
+        Component:
+          Ref: Component
+        Stage:
+          Ref: Stage
+        LogBucketName:
+          Fn::GetAtt:
+          - LogBucket
+          - Outputs.LogBucketName

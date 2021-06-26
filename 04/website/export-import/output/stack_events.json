@@ -1,0 +1,62 @@
+[
+  {
+    "ClientRequestToken": null,
+    "EventId": "ce29d860-cff8-11eb-ac02-06214f92eca2",
+    "LogicalResourceId": "website-export-import-website-dev",
+    "PhysicalResourceId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/website-export-import-website-dev/c100db70-cff8-11eb-880f-06de787d0592",
+    "ResourceProperties": null,
+    "ResourceStatus": {
+      "Value": "ROLLBACK_COMPLETE"
+    },
+    "ResourceStatusReason": null,
+    "ResourceType": "AWS::CloudFormation::Stack",
+    "StackId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/website-export-import-website-dev/c100db70-cff8-11eb-880f-06de787d0592",
+    "StackName": "website-export-import-website-dev",
+    "Timestamp": "2021-06-18T07:48:28.252+02:00"
+  },
+  {
+    "ClientRequestToken": null,
+    "EventId": "c5f66370-cff8-11eb-b533-0611177e736a",
+    "LogicalResourceId": "website-export-import-website-dev",
+    "PhysicalResourceId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/website-export-import-website-dev/c100db70-cff8-11eb-880f-06de787d0592",
+    "ResourceProperties": null,
+    "ResourceStatus": {
+      "Value": "ROLLBACK_IN_PROGRESS"
+    },
+    "ResourceStatusReason": "Export with name website-dev-export-import-log-bucket-name is already exported by stack website-export-import-log-bucket-dev. Rollback requested by user.",
+    "ResourceType": "AWS::CloudFormation::Stack",
+    "StackId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/website-export-import-website-dev/c100db70-cff8-11eb-880f-06de787d0592",
+    "StackName": "website-export-import-website-dev",
+    "Timestamp": "2021-06-18T07:48:14.494+02:00"
+  },
+  {
+    "ClientRequestToken": null,
+    "EventId": "c488f0c0-cff8-11eb-819c-02efbfe54776",
+    "LogicalResourceId": "website-export-import-website-dev",
+    "PhysicalResourceId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/website-export-import-website-dev/c100db70-cff8-11eb-880f-06de787d0592",
+    "ResourceProperties": null,
+    "ResourceStatus": {
+      "Value": "CREATE_IN_PROGRESS"
+    },
+    "ResourceStatusReason": "User Initiated",
+    "ResourceType": "AWS::CloudFormation::Stack",
+    "StackId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/website-export-import-website-dev/c100db70-cff8-11eb-880f-06de787d0592",
+    "StackName": "website-export-import-website-dev",
+    "Timestamp": "2021-06-18T07:48:12.083+02:00"
+  },
+  {
+    "ClientRequestToken": null,
+    "EventId": "c1008d50-cff8-11eb-880f-06de787d0592",
+    "LogicalResourceId": "website-export-import-website-dev",
+    "PhysicalResourceId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/website-export-import-website-dev/c100db70-cff8-11eb-880f-06de787d0592",
+    "ResourceProperties": null,
+    "ResourceStatus": {
+      "Value": "REVIEW_IN_PROGRESS"
+    },
+    "ResourceStatusReason": "User Initiated",
+    "ResourceType": "AWS::CloudFormation::Stack",
+    "StackId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/website-export-import-website-dev/c100db70-cff8-11eb-880f-06de787d0592",
+    "StackName": "website-export-import-website-dev",
+    "Timestamp": "2021-06-18T07:48:06.259+02:00"
+  }
+]

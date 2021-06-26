@@ -1,0 +1,14 @@
+[
+  {
+    "Description": "The name of the SSM parameter where the Name of the Log Bucket is stored",
+    "ExportName": null,
+    "OutputKey": "S3LogBucketParamName",
+    "OutputValue": "/website/dev/parametrized/log-bucket/name"
+  },
+  {
+    "Description": "S3 Log Bucket Name",
+    "ExportName": null,
+    "OutputKey": "LogBucketName",
+    "OutputValue": "website-parametrized-log-bucket-dev-s3logbucket-j0gcxl2svpps"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "StackName": "website-nested-nested-dev-Website-1IIVLVP31XSE1",
+    "Outputs": [
+      {
+        "Description": "URL for website hosted on S3",
+        "ExportName": null,
+        "OutputKey": "WebsiteURL",
+        "OutputValue": "http://website-nested-nested-dev-website-1iivl-s3website-174rqvaldrgj6.s3-website.eu-central-1.amazonaws.com"
+      },
+      {
+        "Description": "S3 Bucket Name",
+        "ExportName": null,
+        "OutputKey": "S3BucketName",
+        "OutputValue": "website-nested-nested-dev-website-1iivl-s3website-174rqvaldrgj6"
+      }
+    ]
+  },
+  {
+    "StackName": "website-nested-nested-dev-LogBucket-FVE12CF7HL6U",
+    "Outputs": [
+      {
+        "Description": "S3 Log Bucket Name",
+        "ExportName": null,
+        "OutputKey": "LogBucketName",
+        "OutputValue": "website-nested-nested-dev-logbucket-f-s3logbucket-d7nlef7a2kui"
+      }
+    ]
+  },
+  {
+    "StackName": "website-nested-nested-dev",
+    "Outputs": []
+  },
+  {
+    "StackName": "website-nested-artifact-dev",
+    "Outputs": [
+      {
+        "Description": null,
+        "ExportName": null,
+        "OutputKey": "ArtifactBucketName",
+        "OutputValue": "website-nested-artifact-dev-artifactbucket-1sqm99yyl45ca"
+      },
+      {
+        "Description": null,
+        "ExportName": null,
+        "OutputKey": "ArtifactBucketNameParamName",
+        "OutputValue": "/website/dev/nested/artifact-bucket/bucket-name"
+      }
+    ]
+  }
+]
