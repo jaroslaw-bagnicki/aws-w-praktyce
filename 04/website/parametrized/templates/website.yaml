@@ -29,7 +29,7 @@ Resources:
         ErrorDocument: error.html
       LoggingConfiguration:
         DestinationBucketName: !Ref LogBucketName
-        LogFilePrefix: s3-website
+        LogFilePrefix: s3-website/
       Tags:
         - Key: Name
           Value: !Sub ${Project}-${Component}-${Stage}-static-s3-website
