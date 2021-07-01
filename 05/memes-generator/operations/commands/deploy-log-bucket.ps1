@@ -1,7 +1,7 @@
 Import-Module AWS.Tools.Common
 Import-Module AWS.Tools.CloudFormation
 
-Set-DefaultAwsRegion 'eu-east-1'
+Set-DefaultAwsRegion 'eu-central-1'
 
 $stage = "dev"
 $project = "memes-generator"
@@ -33,7 +33,7 @@ $tags = @(
 )
 
 New-CFNStack `
-    -TemplateBody $templateBody `
     -StackName $stackName `
+    -TemplateBody $templateBody `
     -Parameter $parameters `
     -Tag $tags
