@@ -31,9 +31,18 @@ Write-Host "Loading parameterss from: $parameterPath ..." -ForegroundColor Blue
 $parameters = Get-Content $parameterPath | ConvertFrom-Json
 
 $tags = @(
-    @{ Key = 'Project'; Value = $project },
-    @{ Key = 'Component'; Value = $component },
-    @{ Key = 'Stage'; Value = $stage }
+    @{
+        Key = 'Project'
+        Value = $project
+    },
+    @{
+        Key = 'Component'
+        Value = $component
+    },
+    @{
+        Key = 'Stage'
+        Value = $stage
+    }
 )
 
 Write-Host "Creating [$stackName] stack ..." -ForegroundColor Blue
