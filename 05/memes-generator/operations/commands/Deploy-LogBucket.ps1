@@ -8,7 +8,6 @@ $project = "memes-generator"
 $component = "operations"
 
 $stack = "log-bucket"
-
 $stackName = "$project-$component-$stack-$stage"
 
 $templateFilename = "log-bucket"

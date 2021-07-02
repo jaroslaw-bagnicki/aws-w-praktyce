@@ -1,0 +1,122 @@
+[
+  {
+    "Description": "The name of the SSM parameter where the Id of the  VPC is stored",
+    "ExportName": null,
+    "OutputKey": "VpcIdParamName",
+    "OutputValue": "/memes-generator/dev/network/vpc/vpc-id"
+  },
+  {
+    "Description": "The name of the SSM parameter where the Id of the private subnet A is stored",
+    "ExportName": null,
+    "OutputKey": "PrivateSubnetAIdParamName",
+    "OutputValue": "/memes-generator/dev/network/private-subnet-a/subnet-id"
+  },
+  {
+    "Description": "The ID of public subnet A",
+    "ExportName": null,
+    "OutputKey": "PublicSubnetAId",
+    "OutputValue": "subnet-09d0957aacc17fcf5"
+  },
+  {
+    "Description": "The ID of public subnet B",
+    "ExportName": null,
+    "OutputKey": "PublicSubnetBId",
+    "OutputValue": "subnet-057fcf3a4527a6145"
+  },
+  {
+    "Description": "The name of the SSM parameter where the Id of private route table B is stored",
+    "ExportName": null,
+    "OutputKey": "PrivateRouteTableBIdParamName",
+    "OutputValue": "/memes-generator/dev/network/private-route-table-b/rt-id"
+  },
+  {
+    "Description": "The name of the SSM parameter where the Id of the public subnet B is stored",
+    "ExportName": null,
+    "OutputKey": "PublicSubnetBIdParamName",
+    "OutputValue": "PublicSubnetBIdParam"
+  },
+  {
+    "Description": "The ID of data route table A",
+    "ExportName": null,
+    "OutputKey": "DataRouteTableAId",
+    "OutputValue": "rtb-0db4d18142a48cde0"
+  },
+  {
+    "Description": "The ID of data route table B",
+    "ExportName": null,
+    "OutputKey": "DataRouteTableBId",
+    "OutputValue": "rtb-0e75e7badedf59465"
+  },
+  {
+    "Description": "The ID the the public route table",
+    "ExportName": null,
+    "OutputKey": "PublicRouteTableId",
+    "OutputValue": "rtb-06ffe6c5cbc214255"
+  },
+  {
+    "Description": "The name of the SSM parameter where the Id of data route table B is stored",
+    "ExportName": null,
+    "OutputKey": "DataRouteTableBIdParamName",
+    "OutputValue": "/memes-generator/dev/network/data-route-table-b/rt-id"
+  },
+  {
+    "Description": "The ID of  VPC",
+    "ExportName": null,
+    "OutputKey": "VpcId",
+    "OutputValue": "vpc-06cacffec63bb7dd0"
+  },
+  {
+    "Description": "The name of the SSM parameter where the Id of the private subnet B is stored",
+    "ExportName": null,
+    "OutputKey": "PrivateSubnetBIdParamName",
+    "OutputValue": "/memes-generator/dev/network/private-subnet-b/subnet-id"
+  },
+  {
+    "Description": "The name of the SSM parameter where the Id of the public subnet A is stored",
+    "ExportName": null,
+    "OutputKey": "PublicSubnetAIdParamName",
+    "OutputValue": "PublicSubnetAIdParam"
+  },
+  {
+    "Description": "The ID of private route table A",
+    "ExportName": null,
+    "OutputKey": "PrivateRouteTableAId",
+    "OutputValue": "rtb-04c0e523f7b36c482"
+  },
+  {
+    "Description": "The ID of private route table B",
+    "ExportName": null,
+    "OutputKey": "PrivateRouteTableBId",
+    "OutputValue": "rtb-082fb38702cb4910c"
+  },
+  {
+    "Description": "The name of the SSM parameter where the Id of the public route table is stored",
+    "ExportName": null,
+    "OutputKey": "PublicRouteTableIdParamName",
+    "OutputValue": "/memes-generator/dev/network/public-route-table/rt-id"
+  },
+  {
+    "Description": "The ID of private subnet B",
+    "ExportName": null,
+    "OutputKey": "PrivateSubnetBId",
+    "OutputValue": "subnet-0dc3e25fc44d2686b"
+  },
+  {
+    "Description": "The ID of private subnet A",
+    "ExportName": null,
+    "OutputKey": "PrivateSubnetAId",
+    "OutputValue": "subnet-0065dbf4efcf9d4a9"
+  },
+  {
+    "Description": "The name of the SSM parameter where the Id of private route table A is stored",
+    "ExportName": null,
+    "OutputKey": "PrivateRouteTableAIdParamName",
+    "OutputValue": "/memes-generator/dev/network/private-route-table-a/rt-id"
+  },
+  {
+    "Description": "The name of the SSM parameter where the Id of data route table A is stored",
+    "ExportName": null,
+    "OutputKey": "DataRouteTableAIdParamName",
+    "OutputValue": "/memes-generator/dev/network/data-route-table-a/rt-id"
+  }
+]
