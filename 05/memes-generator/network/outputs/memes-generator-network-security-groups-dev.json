@@ -1,0 +1,50 @@
+[
+  {
+    "Description": "The ID of JumpHost Security group",
+    "ExportName": null,
+    "OutputKey": "JumpHostSecurityGroupId",
+    "OutputValue": "sg-01a5af990c614e25e"
+  },
+  {
+    "Description": "The name of the SSM parameter where the Id of the Alb Security group is stored",
+    "ExportName": null,
+    "OutputKey": "AlbSecurityGroupParamName",
+    "OutputValue": "/memes-generator/dev/network/alb-sg/sg-id"
+  },
+  {
+    "Description": "The ID of Application Security group",
+    "ExportName": null,
+    "OutputKey": "ApplicationSecurityGroupId",
+    "OutputValue": "sg-0b13d8416fbcf9237"
+  },
+  {
+    "Description": "The name of the SSM parameter where the Id of the JumpHost Security group is stored",
+    "ExportName": null,
+    "OutputKey": "JumpHostSecurityGroupParamName",
+    "OutputValue": "/memes-generator/dev/network/jumphost-sg/sg-id"
+  },
+  {
+    "Description": "The name of the SSM parameter where the Id of the Application Security group is stored",
+    "ExportName": null,
+    "OutputKey": "ApplicationSecurityGroupParamName",
+    "OutputValue": "/memes-generator/dev/network/application-sg/sg-id"
+  },
+  {
+    "Description": "The name of the SSM parameter where the Id of the Database Security group is stored",
+    "ExportName": null,
+    "OutputKey": "DatabaseSecurityGroupParamName",
+    "OutputValue": "/memes-generator/dev/network/database-sg/sg-id"
+  },
+  {
+    "Description": "The ID of Alb Security group",
+    "ExportName": null,
+    "OutputKey": "AlbSecurityGroupId",
+    "OutputValue": "sg-0c6cd41c4a3715fbd"
+  },
+  {
+    "Description": "The ID of Database Security group",
+    "ExportName": null,
+    "OutputKey": "DatabaseSecurityGroupId",
+    "OutputValue": "sg-0c3333e4725c343aa"
+  }
+]
