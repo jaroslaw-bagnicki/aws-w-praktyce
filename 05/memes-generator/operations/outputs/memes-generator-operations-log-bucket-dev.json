@@ -1,0 +1,20 @@
+[
+  {
+    "Description": "S3 Log Bucket Name",
+    "ExportName": null,
+    "OutputKey": "S3BLogBucketName",
+    "OutputValue": "memes-generator-operations-log-bucket-s3logbucket-1h94r5sw5g6j4"
+  },
+  {
+    "Description": "The name of the SSM parameter where the Name of the Log Bucket is stored",
+    "ExportName": null,
+    "OutputKey": "S3LogBucketParamName",
+    "OutputValue": "/memes-generator/dev/operations/log-bucket/name"
+  },
+  {
+    "Description": "The name of the SSM parameter where the Arn of the Log Bucket is stored",
+    "ExportName": null,
+    "OutputKey": "S3LogBucketArnParam",
+    "OutputValue": "/memes-generator/dev/operations/log-bucket/arn"
+  }
+]

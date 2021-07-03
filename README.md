@@ -4,3 +4,4 @@ https://szkolachmury.pl/oferta/aws-w-praktyce-pierwszy-projekt-w-chmurze
 ## Homeworks
 - [Week 3](03/week3-homework.md)
 - [Week 4](04/week-4.md)
+- [Week 5](05/week-5.md)

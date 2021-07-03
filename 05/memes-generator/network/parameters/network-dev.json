@@ -1,0 +1,46 @@
+[
+    {
+        "ParameterKey": "Project",
+        "ParameterValue": "memes-generator"
+    },
+    {
+        "ParameterKey": "Stage",
+        "ParameterValue": "dev"
+    },
+    {
+        "ParameterKey": "Component",
+        "ParameterValue": "network"
+    },
+    {
+        "ParameterKey": "DataSubnetACidr",
+        "ParameterValue": "10.0.48.0/21"
+    },
+    {
+        "ParameterKey": "DataSubnetBCidr",
+        "ParameterValue": "10.0.112.0/21"
+    },
+    {
+        "ParameterKey": "PublicSubnetACidr",
+        "ParameterValue": "10.0.32.0/20"
+    },
+    {
+        "ParameterKey": "PublicSubnetBCidr",
+        "ParameterValue": "10.0.96.0/20"
+    },
+    {
+        "ParameterKey": "PrivateSubnetACidr",
+        "ParameterValue": "10.0.0.0/19"
+    },
+    {
+        "ParameterKey": "PrivateSubnetBCidr",
+        "ParameterValue": "10.0.64.0/19"
+    },
+    {
+        "ParameterKey": "VpcCidrBlock",
+        "ParameterValue": "10.0.0.0/16"
+    },
+    {
+        "ParameterKey": "LogBucketArn",
+        "ParameterValue": "/memes-generator/dev/operations/log-bucket/arn"
+    }
+]

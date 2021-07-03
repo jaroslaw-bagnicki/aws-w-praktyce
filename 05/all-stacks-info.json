@@ -1,0 +1,42 @@
+[
+  {
+    "StackId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/memes-generator-network-nat-gateway-b-dev/2b81c320-dbb5-11eb-a1c2-02baa6738268",
+    "StackName": "memes-generator-network-nat-gateway-b-dev",
+    "CreationTime": "2021-07-03T06:14:33.183+02:00",
+    "StackStatus": {
+      "Value": "CREATE_COMPLETE"
+    }
+  },
+  {
+    "StackId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/memes-generator-network-nat-gateway-a-dev/19a93d50-dbb4-11eb-8f01-0aa7356ae93a",
+    "StackName": "memes-generator-network-nat-gateway-a-dev",
+    "CreationTime": "2021-07-03T06:06:53.725+02:00",
+    "StackStatus": {
+      "Value": "CREATE_COMPLETE"
+    }
+  },
+  {
+    "StackId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/memes-generator-network-security-groups-dev/52729010-db6d-11eb-a1c2-02baa6738268",
+    "StackName": "memes-generator-network-security-groups-dev",
+    "CreationTime": "2021-07-02T21:40:14.727+02:00",
+    "StackStatus": {
+      "Value": "CREATE_COMPLETE"
+    }
+  },
+  {
+    "StackId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/memes-generator-network-network-dev/39b926a0-db64-11eb-8f01-0aa7356ae93a",
+    "StackName": "memes-generator-network-network-dev",
+    "CreationTime": "2021-07-02T20:35:07.811+02:00",
+    "StackStatus": {
+      "Value": "CREATE_COMPLETE"
+    }
+  },
+  {
+    "StackId": "arn:aws:cloudformation:eu-central-1:398814723438:stack/memes-generator-operations-log-bucket-dev/bac8f370-daf0-11eb-8617-02845a5ead5c",
+    "StackName": "memes-generator-operations-log-bucket-dev",
+    "CreationTime": "2021-07-02T06:48:22.622+02:00",
+    "StackStatus": {
+      "Value": "CREATE_COMPLETE"
+    }
+  }
+]
