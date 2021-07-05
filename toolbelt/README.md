@@ -3,4 +3,4 @@
 **MemGenToolbelt** module containt utils functions to simplify managing Memes Generator project.  
 
 ### Installation
-To install module locally run script: `InstallMemGenToolBelt.ps1`
+Module can be installed by coping source files `InstallMemGenToolBelt.ps1` or via symlink creation `InstallMemGenToolBelt.ps1 -ViaSymLink`. Second approach can be useful during development process.
