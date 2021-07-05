@@ -1,11 +1,11 @@
 enum Stage {
-    DEV
-    PROD
-    STAGING
-    TEST
+    dev
+    prod
+    staging
+    test
  }
 
-class MGContext {
+class Context {
     [string] $Project
     [string] $Component
     [Stage] $Stage
@@ -21,39 +21,36 @@ class MGContext {
     }
 }
 
-function Set-MGContext(
-    [string] $Project,
-    [string] $Component,
-    [Stage] $Stage
-) {
-    Set-Variable -Name MG_CONTEXT -Value [MGContext]::new($Project, $Component, $Stage)
+Set-Variable -Name MG_CONTEXT -Value $null -Scope Script 
+
+function Set-MGContext {
+    param (
+        [Parameter(Mandatory, Position=0)]
+        [string] $Project,
+
+        [Parameter(Mandatory, Position=1)]
+        [string] $Component,
+
+        [Parameter(Mandatory, Position=2)]
+        [string] $Stage           
+    )
+
+    Set-Variable -Name MG_CONTEXT -Value ([Context]::new($Project, $Component, $Stage)) -Scope Script
+    Write-Host "Context was set: Project=$($MG_CONTEXT.Project), Component=$($MG_CONTEXT.Component), Stage=$($MG_CONTEXT.Stage)" -ForegroundColor Green
 }
 
-function Get-MGContext() {
-    Get-Variable -Name MG_CONTEXT
+function Get-MGContext {
+    $ctx = Get-Variable -Name MG_CONTEXT -ValueOnly
+    if ($null -eq $ctx) {
+        Write-Warning 'Context is not set!'
+    } else {
+        $ctx
+    }
 }
 
-function Test-MGContext() {
-    [MGContext]$context = Get-MGContext
-    if ($null -eq $context) {
-        throw 'MGContext is not set!'
-    }
-
-    $missingValues = @()
-    if ($null -eq $context.Project) {
-        $missingValues += 'Project'
-    }
-    if ($null -eq $context.Component) {
-        $missingValues += 'Component'
-    }
-    if ($null -eq $context.Stage) {
-        $missingValues += 'Stage'
-    }
-
-    if ($missingValues.Length -eq 1) {
-        throw "$missingValues[0] property is not set!"
-    }
-    if ($missingValues.Length -gt 1) {
-        throw "($missingValues.Join(', ')) are not set!"
+function Test-MGContext {
+    $ctx = Get-Variable -Name MG_CONTEXT -ValueOnly
+    if ($null -eq $ctx) {
+        throw "Context is not set! Run 'Set-MGContext' first."
     }
 }

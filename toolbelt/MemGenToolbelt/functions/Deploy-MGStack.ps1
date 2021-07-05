@@ -1,68 +1,71 @@
 Import-Module AWS.Tools.Common
 Import-Module AWS.Tools.CloudFormation
-. ./MGContext
+. Join-Path $PSScriptRoot ./MGContext
 
-function Deploy-MGStack(
-    [string] $Stack,
-    [string] $Template,
-    [string] $Params
-) {
+function Deploy-MGStack {
+    param (
+        [Parameter(Mandatory, Position=0)]
+        [string] $Stack,
+
+        [Parameter(Mandatory, Position=1)]
+        [string] $Template,
+
+        [Parameter(Mandatory, Position=2)]
+        [string] $Params
+    )
+
     try {
         Test-MGContext
-    } catch {
-        Write-Error $_.Exception.Message -ErrorAction Stop
-    }
+        $context = Get-MGContext
 
-    $stage = $MG_CONTEXT.Stage
-    $project = $MG_CONTEXT.Project
-    $component = $MG_CONTEXT.Component
-    
-    $stackFullname = "$project-$component-$Stack-$stage"
+        $stage = $context.Stage
+        $project = $context.Project
+        $component = $context.Component
+        
+        $stackFullname = "$project-$component-$Stack-$stage"
 
-    $templatePath = Join-Path $PWD "$project/$component/templates/$Template.yaml"
-    if (! (Test-Path $templatePath)) {
-        Write-Error 'File with template not found!' -ErrorAction Stop
-    }
-    
-    Write-Host "Loading template from: $templatePath ..." -ForegroundColor Blue
-    $templateBody = Get-Content $templatePath -Raw
-    
-    $parameterPath = Join-Path $PWD "$project/$component/parameters/$Params-$stage.json"
-    if (! (Test-Path $parameterPath)) {
-        Write-Error 'File with parameters not found!' -ErrorAction Stop
-    }
-    
-    Write-Host "Loading parameterss from: $parameterPath ..." -ForegroundColor Blue
-    $parameters = Get-Content $parameterPath | ConvertFrom-Json
-    
-    $tags = @(
-        @{
-            Key = 'Project'
-            Value = $project
-        },
-        @{
-            Key = 'Component'
-            Value = $component
-        },
-        @{
-            Key = 'Stage'
-            Value = $stage
+        $templatePath = Join-Path $PWD "$project/$component/templates/$Template.yaml"
+        if (! (Test-Path $templatePath)) {
+            throw "File with template ($templatePath) not found!"
         }
-    )
     
-    Write-Host "Creating [$stackFullname] stack ..." -ForegroundColor Blue
+        $templateBody = Get-Content $templatePath -Raw
+        Write-Host "Template loaded from: $templatePath" -ForegroundColor Gray
+        
+        $parameterPath = Join-Path $PWD "$project/$component/parameters/$Params-$stage.json"
+        if (! (Test-Path $parameterPath)) {
+            throw "File with parameters ($parameterPath) not found!"
+        }
     
-    try {
+        $parameters = Get-Content $parameterPath | ConvertFrom-Json
+        Write-Host "Parameters loaded from: $parameterPath ..." -ForegroundColor Gray
+    
+        $tags = @(
+            @{
+                Key = 'Project'
+                Value = $project
+            },
+            @{
+                Key = 'Component'
+                Value = $component
+            },
+            @{
+                Key = 'Stage'
+                Value = $stage
+            }
+        )
+    
+        Write-Host "Creating [$stackFullname] stack ..." -ForegroundColor Blue
+    
         New-CFNStack `
             -StackName $stackFullname `
             -TemplateBody $templateBody `
             -Parameter $parameters `
             -Tag $tags
     
+        Write-Host "Stack created success." -ForegroundColor Green
+
     } catch {
         Write-Error $_.Exception.Message -ErrorAction Stop
     }
-    
-    Write-Host "Stack created success." -ForegroundColor Green
-
 }
