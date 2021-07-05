@@ -1,3 +1,5 @@
+# Scipt install MemGenToolbet from local source
+
 $moduleName = 'MemGenToolbelt'
 
 $delimeter = $IsWindows ? ';' : ':'
