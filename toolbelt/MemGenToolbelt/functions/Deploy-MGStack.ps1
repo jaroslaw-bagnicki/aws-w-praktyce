@@ -1,6 +1,7 @@
 Import-Module AWS.Tools.Common
 Import-Module AWS.Tools.CloudFormation
 . Join-Path $PSScriptRoot ./MGContext
+. Join-Path $PSScriptRoot ./Test-AwsRegionSet
 
 function Deploy-MGStack {
     param (
@@ -15,6 +16,7 @@ function Deploy-MGStack {
     )
 
     try {
+        Test-AwsRegionSet
         Test-MGContext
         $context = Get-MGContext
 
@@ -57,7 +59,7 @@ function Deploy-MGStack {
     
         Write-Host "Creating [$stackFullname] stack ..." -ForegroundColor Blue
     
-        New-CFNStack `
+        $response = New-CFNStack `
             -StackName $stackFullname `
             -TemplateBody $templateBody `
             -Parameter $parameters `

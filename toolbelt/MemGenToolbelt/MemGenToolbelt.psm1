@@ -7,4 +7,4 @@ foreach ($function in $functions) {
 }
 
 Export-ModuleMember -Function Deploy-MGStack
-Export-ModuleMember -Function Set-MGContext, Get-MGContext ,Test-MGContext
+Export-ModuleMember -Function Set-MGContext, Get-MGContext
