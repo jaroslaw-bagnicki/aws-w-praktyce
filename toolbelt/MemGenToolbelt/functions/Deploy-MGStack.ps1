@@ -4,6 +4,7 @@ Import-Module AWS.Tools.CloudFormation
 . Join-Path $PSScriptRoot ./Test-AwsRegionSet
 
 function Deploy-MGStack {
+    [CmdletBinding()]
     param (
         [Parameter(Mandatory, Position=0)]
         [string] $Stack,
@@ -59,11 +60,26 @@ function Deploy-MGStack {
     
         Write-Host "Creating [$stackFullname] stack ..." -ForegroundColor Blue
     
-        $response = New-CFNStack `
+        $stackId = New-CFNStack `
             -StackName $stackFullname `
             -TemplateBody $templateBody `
             -Parameter $parameters `
             -Tag $tags
+
+        $status = Get-CFNStack -StackName $stackId | Select-Object -ExpandProperty StackStatus  
+
+        while ($status.Value -like '*IN_PROGRESS') {
+            Start-Sleep -Seconds 1
+            $currStatus = Get-CFNStack -StackName $stackId | Select-Object -ExpandProperty StackStatus
+            if ($currStatus -ne $status) {
+                $status = $currStatus
+                Write-Host $status;
+            }
+        } 
+
+        if ($status.Value -like '*FAILD') {
+            throw 'Deploying stack failed'
+        }
     
         Write-Host "Stack created success." -ForegroundColor Green
 
