@@ -66,7 +66,9 @@ function Deploy-MGStack {
             -Parameter $parameters `
             -Tag $tags
 
-        $status = Get-CFNStack -StackName $stackId | Select-Object -ExpandProperty StackStatus  
+        $stackInfo = Get-CFNStack -StackName $stackId
+        $stackName = $stackInfo.StackName
+        $status = $stackInfo.StackStatus
 
         while ($status.Value -like '*IN_PROGRESS') {
             Start-Sleep -Seconds 1
@@ -81,7 +83,8 @@ function Deploy-MGStack {
             throw 'Deploying stack failed'
         }
     
-        Write-Host "Stack created success." -ForegroundColor Green
+        Write-Host "Stack [$stackName] created success." -ForegroundColor Green
+        return $stackName
 
     } catch {
         Write-Error $_.Exception.Message -ErrorAction Stop

@@ -44,7 +44,7 @@ function Get-MGContext {
     if ($null -eq $ctx) {
         Write-Warning 'Context is not set!'
     } else {
-        $ctx
+        return [Context]$ctx
     }
 }
 
