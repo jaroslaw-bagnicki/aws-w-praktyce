@@ -2,6 +2,7 @@ Import-Module AWS.Tools.Common
 Import-Module AWS.Tools.CloudFormation
 . Join-Path $PSScriptRoot ./MGContext
 . Join-Path $PSScriptRoot ./Test-AwsRegionSet
+. Join-Path $PSScriptRoot ./DateTimeHelpers
 
 function Deploy-MGStack {
     [CmdletBinding()]
@@ -27,21 +28,25 @@ function Deploy-MGStack {
         
         $stackFullname = "$project-$component-$Stack-$stage"
 
+        Write-Host "[$(Get-Time)] Creating [$stackFullname] stack ..." -ForegroundColor Blue
+
         $templatePath = Join-Path $PWD "$project/$component/templates/$Template.yaml"
         if (! (Test-Path $templatePath)) {
             throw "File with template ($templatePath) not found!"
         }
     
         $templateBody = Get-Content $templatePath -Raw
-        Write-Host "Template loaded from: $templatePath" -ForegroundColor Gray
+        $templateRelativePath = Resolve-Path -Path  $templatePath -Relative
+        Write-Verbose "[$(Get-Time)] Template loaded from: $templateRelativePath"
         
-        $parameterPath = Join-Path $PWD "$project/$component/parameters/$Params-$stage.json"
-        if (! (Test-Path $parameterPath)) {
-            throw "File with parameters ($parameterPath) not found!"
+        $parametersPath = Join-Path $PWD "$project/$component/parameters/$Params-$stage.json"
+        if (! (Test-Path $parametersPath)) {
+            throw "File with parameters ($parametersPath) not found!"
         }
     
-        $parameters = Get-Content $parameterPath | ConvertFrom-Json
-        Write-Host "Parameters loaded from: $parameterPath ..." -ForegroundColor Gray
+        $parameters = Get-Content $parametersPath | ConvertFrom-Json
+        $parametersRelativePath = Resolve-Path -Path  $parametersPath -Relative
+        Write-Verbose "[$(Get-Time)] Parameters loaded from: $parametersRelativePath"
     
         $tags = @(
             @{
@@ -58,8 +63,6 @@ function Deploy-MGStack {
             }
         )
     
-        Write-Host "Creating [$stackFullname] stack ..." -ForegroundColor Blue
-    
         $stackId = New-CFNStack `
             -StackName $stackFullname `
             -TemplateBody $templateBody `
@@ -72,18 +75,14 @@ function Deploy-MGStack {
 
         while ($status.Value -like '*IN_PROGRESS') {
             Start-Sleep -Seconds 1
-            $currStatus = Get-CFNStack -StackName $stackId | Select-Object -ExpandProperty StackStatus
-            if ($currStatus -ne $status) {
-                $status = $currStatus
-                Write-Host $status;
-            }
+            $status = Get-CFNStack -StackName $stackId | Select-Object -ExpandProperty StackStatus
         } 
 
         if ($status.Value -like '*FAILD') {
             throw 'Deploying stack failed'
         }
     
-        Write-Host "Stack [$stackName] created success." -ForegroundColor Green
+        Write-Host "[$(Get-Time)] Stack [$stackName] creation success." -ForegroundColor Green
         return $stackName
 
     } catch {

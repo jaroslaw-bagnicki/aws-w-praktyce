@@ -1,3 +1,5 @@
+. Join-Path $PSScriptRoot ./DateTimeHelpers
+
 enum Stage {
     dev
     prod
@@ -36,7 +38,7 @@ function Set-MGContext {
     )
 
     Set-Variable -Name MG_CONTEXT -Value ([Context]::new($Project, $Component, $Stage)) -Scope Script
-    Write-Host "Context was set: Project=$($MG_CONTEXT.Project), Component=$($MG_CONTEXT.Component), Stage=$($MG_CONTEXT.Stage)" -ForegroundColor Green
+    Write-Verbose "[$(Get-Time)] Context was set to Project=$($MG_CONTEXT.Project), Component=$($MG_CONTEXT.Component), Stage=$($MG_CONTEXT.Stage)"
 }
 
 function Get-MGContext {

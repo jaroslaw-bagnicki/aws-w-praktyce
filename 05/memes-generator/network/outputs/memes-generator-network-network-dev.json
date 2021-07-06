@@ -15,13 +15,13 @@
     "Description": "The ID of public subnet A",
     "ExportName": null,
     "OutputKey": "PublicSubnetAId",
-    "OutputValue": "subnet-09d0957aacc17fcf5"
+    "OutputValue": "subnet-0ff74656057cafac0"
   },
   {
     "Description": "The ID of public subnet B",
     "ExportName": null,
     "OutputKey": "PublicSubnetBId",
-    "OutputValue": "subnet-057fcf3a4527a6145"
+    "OutputValue": "subnet-0b7f66b27d227647e"
   },
   {
     "Description": "The name of the SSM parameter where the Id of private route table B is stored",
@@ -39,19 +39,19 @@
     "Description": "The ID of data route table A",
     "ExportName": null,
     "OutputKey": "DataRouteTableAId",
-    "OutputValue": "rtb-0db4d18142a48cde0"
+    "OutputValue": "rtb-0c63318ed6fb9eecb"
   },
   {
     "Description": "The ID of data route table B",
     "ExportName": null,
     "OutputKey": "DataRouteTableBId",
-    "OutputValue": "rtb-0e75e7badedf59465"
+    "OutputValue": "rtb-00b25ab19a5addebf"
   },
   {
     "Description": "The ID the the public route table",
     "ExportName": null,
     "OutputKey": "PublicRouteTableId",
-    "OutputValue": "rtb-06ffe6c5cbc214255"
+    "OutputValue": "rtb-0516c76075e686798"
   },
   {
     "Description": "The name of the SSM parameter where the Id of data route table B is stored",
@@ -63,7 +63,7 @@
     "Description": "The ID of  VPC",
     "ExportName": null,
     "OutputKey": "VpcId",
-    "OutputValue": "vpc-06cacffec63bb7dd0"
+    "OutputValue": "vpc-058b338909af859dc"
   },
   {
     "Description": "The name of the SSM parameter where the Id of the private subnet B is stored",
@@ -81,13 +81,13 @@
     "Description": "The ID of private route table A",
     "ExportName": null,
     "OutputKey": "PrivateRouteTableAId",
-    "OutputValue": "rtb-04c0e523f7b36c482"
+    "OutputValue": "rtb-0a289e1e09a456a20"
   },
   {
     "Description": "The ID of private route table B",
     "ExportName": null,
     "OutputKey": "PrivateRouteTableBId",
-    "OutputValue": "rtb-082fb38702cb4910c"
+    "OutputValue": "rtb-0b33ea0a223fce653"
   },
   {
     "Description": "The name of the SSM parameter where the Id of the public route table is stored",
@@ -99,13 +99,13 @@
     "Description": "The ID of private subnet B",
     "ExportName": null,
     "OutputKey": "PrivateSubnetBId",
-    "OutputValue": "subnet-0dc3e25fc44d2686b"
+    "OutputValue": "subnet-0a39e80c458e5421a"
   },
   {
     "Description": "The ID of private subnet A",
     "ExportName": null,
     "OutputKey": "PrivateSubnetAId",
-    "OutputValue": "subnet-0065dbf4efcf9d4a9"
+    "OutputValue": "subnet-0eab983f826361f31"
   },
   {
     "Description": "The name of the SSM parameter where the Id of private route table A is stored",
