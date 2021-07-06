@@ -14,3 +14,7 @@
     - output: [`memes-generator/network/outputs/memes-generator-network-nat-gateway-b-dev.json`](memes-generator/network/outputs/memes-generator-network-nat-gateway-b-dev.json)
 
 All stacks info: [`all-stack-info.json`](all-stacks-info.json).
+
+#### 7/6/21 Update
+1. Added [MemGenToolbelt](../toolbelt/README.md) PowerShell module to simplify **Memes Generator** project infrastructure management.
+1. Deployed all infrastructure at once via [`Deploy-MemGenIfra.ps1`](./Deploy-MemGenInfra.ps1). Log file: [`deploy_2021-07-06`](deploy_2021-07-06.log)
