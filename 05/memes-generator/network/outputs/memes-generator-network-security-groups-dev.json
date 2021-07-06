@@ -3,7 +3,7 @@
     "Description": "The ID of JumpHost Security group",
     "ExportName": null,
     "OutputKey": "JumpHostSecurityGroupId",
-    "OutputValue": "sg-024dc3abaac90e5f8"
+    "OutputValue": "sg-0a01c75f485fe958e"
   },
   {
     "Description": "The name of the SSM parameter where the Id of the Alb Security group is stored",
@@ -15,7 +15,7 @@
     "Description": "The ID of Application Security group",
     "ExportName": null,
     "OutputKey": "ApplicationSecurityGroupId",
-    "OutputValue": "sg-0036672678ca666e3"
+    "OutputValue": "sg-0c28d25e74c5fb3b4"
   },
   {
     "Description": "The name of the SSM parameter where the Id of the JumpHost Security group is stored",
@@ -39,12 +39,12 @@
     "Description": "The ID of Alb Security group",
     "ExportName": null,
     "OutputKey": "AlbSecurityGroupId",
-    "OutputValue": "sg-0bc7891dffb7a2d91"
+    "OutputValue": "sg-0710244470144d6a5"
   },
   {
     "Description": "The ID of Database Security group",
     "ExportName": null,
     "OutputKey": "DatabaseSecurityGroupId",
-    "OutputValue": "sg-031f55f1d233d9934"
+    "OutputValue": "sg-0fe8d73f2b3e94a38"
   }
 ]

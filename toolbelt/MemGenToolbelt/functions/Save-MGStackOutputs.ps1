@@ -18,5 +18,5 @@ function Save-MGStackOutputs {
         | Out-File $outputsFilePath
 
     $relativePath = Resolve-Path -Path  $outputsFilePath -Relative
-    Write-Host "[$(Get-Time)] [$StackName] stack outputs were exported to: $relativePath" -ForegroundColor Cyan
+    Write-Host "[$(Get-Time)] [$StackName] stack outputs were exported to: $relativePath" -ForegroundColor Gray
 }

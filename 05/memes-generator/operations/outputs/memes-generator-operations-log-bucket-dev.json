@@ -3,7 +3,7 @@
     "Description": "S3 Log Bucket Name",
     "ExportName": null,
     "OutputKey": "S3BLogBucketName",
-    "OutputValue": "memes-generator-operations-log-bucket-s3logbucket-etxpnflkoqhu"
+    "OutputValue": "memes-generator-operations-log-bucket-s3logbucket-121q671w9u4rz"
   },
   {
     "Description": "The name of the SSM parameter where the Name of the Log Bucket is stored",
