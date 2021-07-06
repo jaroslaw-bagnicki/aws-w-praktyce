@@ -11,7 +11,7 @@ Set-DefaultAWSRegion 'eu-central-1' -Scope 'global'
 Set-MGContext -Project 'memes-generator' -Component 'operations' -Stage 'dev'
 
 # Deploy Log Bucket
-$logBucketStackName = Deploy-MGStack -Stack 'log-bucket' -Template 'log-bucket' -Params 'log-bucket'
+$logBucketStackName = Deploy-MGStack -Stack 'log-bucket' -Template 'log-bucket' -Params 'log-bucket' -Wait
 Save-MGStackOutputs -StackName $logBucketStackName
 
 
@@ -21,12 +21,12 @@ Save-MGStackOutputs -StackName $logBucketStackName
 Set-MGContext -Project 'memes-generator' -Component 'network' -Stage 'dev'
 
 # Deploy Network
-$natGatewayAStackName = Deploy-MGStack -Stack 'network' -Template 'network' -Params 'network'
-Save-MGStackOutputs -StackName $natGatewayAStackName
+$networkStackName = Deploy-MGStack -Stack 'network' -Template 'network' -Params 'network' -Wait
+Save-MGStackOutputs -StackName $networkStackName
 
 # Deploy Security Groups
-$natGatewayAStackName = Deploy-MGStack -Stack 'security-groups' -Template 'security-groups' -Params 'security-groups' -ErrorAction Stop
-Save-MGStackOutputs -StackName $natGatewayAStackName
+$securityGroupsStackName = Deploy-MGStack -Stack 'security-groups' -Template 'security-groups' -Params 'security-groups' -Wait
+Save-MGStackOutputs -StackName $securityGroupsStackName
 
 
 # -------------------- NAT GATEWAYS --------------------
@@ -35,9 +35,9 @@ Save-MGStackOutputs -StackName $natGatewayAStackName
 Set-MGContext -Project 'memes-generator' -Component 'network' -Stage 'dev'
 
 # Deploy NAT Gateway to first AZ
-$natGatewayAStackName = Deploy-MGStack -Stack 'nat-gateway-a' -Template 'nat-gateway' -Params 'nat-gateway-a'
+$natGatewayAStackName = Deploy-MGStack -Stack 'nat-gateway-a' -Template 'nat-gateway' -Params 'nat-gateway-a' -Wait
 Save-MGStackOutputs -StackName $natGatewayAStackName
 
 # # Deploy NAT Gateway to second AZ
-$natGatewayBStackName = Deploy-MGStack -Stack 'nat-gateway-b' -Template 'nat-gateway' -Params 'nat-gateway-b'
+$natGatewayBStackName = Deploy-MGStack -Stack 'nat-gateway-b' -Template 'nat-gateway' -Params 'nat-gateway-b' -Wait
 Save-MGStackOutputs -StackName $natGatewayBStackName
