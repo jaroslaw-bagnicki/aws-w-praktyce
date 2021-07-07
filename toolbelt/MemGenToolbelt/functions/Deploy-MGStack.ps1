@@ -14,7 +14,11 @@ function Deploy-MGStack {
         [string] $Template,
 
         [Parameter(Mandatory, Position=2)]
-        [string] $Params
+        [string] $Params,
+
+        [string[]] $Capability,
+
+        [switch] $Wait
     )
 
     try {
@@ -67,22 +71,28 @@ function Deploy-MGStack {
             -StackName $stackFullname `
             -TemplateBody $templateBody `
             -Parameter $parameters `
-            -Tag $tags
+            -Tag $tags `
+            -Capability $Capability
 
         $stackInfo = Get-CFNStack -StackName $stackId
         $stackName = $stackInfo.StackName
         $status = $stackInfo.StackStatus
 
-        while ($status.Value -like '*IN_PROGRESS') {
-            Start-Sleep -Seconds 1
-            $status = Get-CFNStack -StackName $stackId | Select-Object -ExpandProperty StackStatus
-        } 
-
-        if ($status.Value -like '*FAILD') {
-            throw 'Deploying stack failed'
-        }
+        if ($Wait) {
+            while ($status.Value -like '*IN_PROGRESS') {
+                Start-Sleep -Seconds 1
+                $status = Get-CFNStack -StackName $stackId | Select-Object -ExpandProperty StackStatus
+            } 
     
-        Write-Host "[$(Get-Time)] Stack [$stackName] creation success." -ForegroundColor Green
+            if ($status.Value -like '*FAILD') {
+                throw 'Deploying stack failed'
+            }
+
+            Write-Host "[$(Get-Time)] Stack [$stackName] with all resources create success." -ForegroundColor Green
+            return $stackName
+        }
+
+        Write-Host "[$(Get-Time)] Stack [$stackName] create success. Resources creation in progress." -ForegroundColor Green
         return $stackName
 
     } catch {
