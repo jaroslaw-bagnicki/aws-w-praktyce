@@ -6,8 +6,8 @@
      - [`memes-generator-application-configuration-bucket-dev.json`](memes-generator/application/outputs/memes-generator-application-configuration-bucket-dev.json)
      - [`memes-generator-application-memes-bucket-dev.json`](memes-generator/application/outputs/memes-generator-application-memes-bucket-dev.json)
      - [`memes-generator-application-pictures-bucket-dev.json`](memes-generator/application/outputs/memes-generator-application-pictures-bucket-dev.json)
- - [x] Upload configuration, and assets to S3.
-   - Uploaded with script: [`07_Upload-ConfigurationToS3.ps1`](07_Upload-ConfigurationToS3.ps1). Result:
+ - [x] Upload configuration, and assets to S3.  (_done: 7/11/21_)    
+   Uploaded with script: [`07_Upload-ConfigurationToS3.ps1`](07_Upload-ConfigurationToS3.ps1). Result:
       ```powershell
       Get-S3Object -BucketName "memes-generator-application-configuratio-s3bucket-1xjpyqpokw21o"
 
