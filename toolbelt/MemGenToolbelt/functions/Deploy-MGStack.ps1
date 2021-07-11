@@ -16,8 +16,13 @@ function Deploy-MGStack {
         [Parameter(Mandatory, Position=2)]
         [string] $Params,
 
+        [Parameter(Position=3)]
         [string[]] $Capability,
 
+        [Parameter()]
+        [switch] $Update,
+
+        [Parameter()]
         [switch] $Wait
     )
 
@@ -32,7 +37,7 @@ function Deploy-MGStack {
         
         $stackFullname = "$project-$component-$Stack-$stage"
 
-        Write-Host "[$(Get-Time)] Creating [$stackFullname] stack ..." -ForegroundColor Blue
+        Write-Host "[$(Get-Time)] $($Update ? 'Updating' : 'Creating') [$stackFullname] stack ..." -ForegroundColor Blue
 
         $templatePath = Join-Path $PWD "$project/$component/templates/$Template.yaml"
         if (! (Test-Path $templatePath)) {
@@ -66,18 +71,29 @@ function Deploy-MGStack {
                 Value = $stage
             }
         )
-    
-        $stackId = New-CFNStack `
-            -StackName $stackFullname `
-            -TemplateBody $templateBody `
-            -Parameter $parameters `
-            -Tag $tags `
-            -Capability $Capability
+
+        $parameters = @{
+            StackName = $stackFullname
+            TemplateBody = $templateBody
+            Parameter = $parameters
+            Tag = $tags         
+        }
+
+        if ($Capability) {
+            $parameters.Capability = $Capability 
+        }
+
+        if ($Update) {
+            $stackId = Update-CFNStack @parameters
+        } else {
+            $stackId = New-CFNStack @parameters
+        }
 
         $stackInfo = Get-CFNStack -StackName $stackId
         $stackName = $stackInfo.StackName
         $status = $stackInfo.StackStatus
 
+        $cfnAction = $Update ? 'update' : 'create'
         if ($Wait) {
             while ($status.Value -like '*IN_PROGRESS') {
                 Start-Sleep -Seconds 1
@@ -88,11 +104,11 @@ function Deploy-MGStack {
                 throw 'Deploying stack failed'
             }
 
-            Write-Host "[$(Get-Time)] Stack [$stackName] with all resources create success." -ForegroundColor Green
+            Write-Host "[$(Get-Time)] Stack [$stackName] with all resources $cfnAction success." -ForegroundColor Green
             return $stackName
         }
 
-        Write-Host "[$(Get-Time)] Stack [$stackName] create success. Resources creation in progress." -ForegroundColor Green
+        Write-Host "[$(Get-Time)] Stack [$stackName] $cfnAction success. Resources creation in progress." -ForegroundColor Green
         return $stackName
 
     } catch {
