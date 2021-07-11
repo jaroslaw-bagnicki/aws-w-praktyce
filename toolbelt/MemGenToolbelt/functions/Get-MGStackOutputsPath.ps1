@@ -15,7 +15,7 @@ function Get-MGStackOutputsPath {
     if (Test-Path $path) {
         return $path
     }
-    elseif ($CreateIfNotExist) {
+    elseif ($CreateIfNotExists) {
         New-Item -ItemType Directory -Force -Path $path
         return $path
     }

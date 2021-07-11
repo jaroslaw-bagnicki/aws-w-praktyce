@@ -9,7 +9,7 @@ function Save-MGStackOutputs {
         $StackName
     )
 
-    $outputsDirPath = Get-MGStackOutputsPath -CreateIfNotExist
+    $outputsDirPath = Get-MGStackOutputsPath -CreateIfNotExists
     $outputsFilePath = Join-Path $outputsDirPath "$StackName.json"
 
     Get-CFNStack -StackName $StackName `
