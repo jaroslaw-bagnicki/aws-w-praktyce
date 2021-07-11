@@ -1,30 +1,23 @@
 Import-Module MemGenToolbelt -Force
 Import-Module AWS.Tools.Common
-Import
+Import-Module AWS.Tools.S3
 
 $ErrorActionPreference = 'Stop'
 Set-DefaultAWSRegion 'eu-central-1' -Scope 'global'
 
-function Get-ParamName([string] $bucketFunction) {
-    $ctx = Get-MGContext
-    "/$($ctx.Project)/$($ctx.Stage)/$($ctx.Component)/$bucketFunction-bucket/name"
-}
-
-function Get-ConfigDirForContext([string] $filename) {
-    $ctx = Get-MGContext
-    Resolve-Path "./$($ctx.Project)/$($ctx.Component)/config/$filename-$($ctx.Stage)"  
-}
-
-# --------------------- OPERATIONS ---------------------
-
 # Set current context
-Set-MGContext -Project 'memes-generator' -Component 'application' -Stage 'dev'
+$ctx = Set-MGContext -Project 'memes-generator' -Component 'application' -Stage 'dev'
+
+# Get bucket name for configuration files
+$paramName = "/$($ctx.Project)/$($ctx.Stage)/$($ctx.Component)/configuration-bucket/name"
+$bucketName = Get-SSMParameter $paramName | Select-Object -ExpandProperty Value
 
 # Upload server configuration
-$ssmParamName = Get-ParamName 'configuration'
-$bucketName = Get-SSMParameter -Name $ssmParamName | Select-Object -ExpandProperty Value
+$filename = '.memesconf'
+$path = Resolve-Path "./$($ctx.Project)/$($ctx.Component)/config/$filename-$($ctx.Stage)"
+Write-S3Object -BucketName $bucketName -File $path -Key "service/$filename"
 
-$configFilename = '.memesconf'
-$configFile = Join-Path Get-ConfigDirForContext "$configFilename-$(ctx.Sage)"
-
-Write-S3Object -BucketName $bucketName -File $configFile -Key "service/$configFilename"
+# Upload cloudwatch configuration
+$filename, $ext = "cloudwatch-config-memes-generator.json".Split('.')
+$path = Resolve-Path "./$($ctx.Project)/$($ctx.Component)/config/$filename-$($ctx.Stage).$ext"
+Write-S3Object -BucketName $bucketName -File $path -Key "cloudwatch/$filename.$ext"

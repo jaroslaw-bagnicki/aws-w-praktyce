@@ -39,6 +39,7 @@ function Set-MGContext {
 
     Set-Variable -Name MG_CONTEXT -Value ([Context]::new($Project, $Component, $Stage)) -Scope Script
     Write-Verbose "[$(Get-Time)] Context was set to Project=$($MG_CONTEXT.Project), Component=$($MG_CONTEXT.Component), Stage=$($MG_CONTEXT.Stage)"
+    Get-MGContext
 }
 
 function Get-MGContext {
