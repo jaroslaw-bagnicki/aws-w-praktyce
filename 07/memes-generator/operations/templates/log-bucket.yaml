@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: Tamplate for log bucket
+Description: Template for log bucket
 
 Parameters:
   Project:
@@ -27,26 +27,26 @@ Resources:
           Value: !Sub ${Project}-${Stage}-${Component}-log-bucket
 
   S3LogBucketNameParam:
-      Type: AWS::SSM::Parameter
-      Properties:
-        Type: String
-        Description: !Sub Stores ${Project}-${Stage}-${Component} Log Bucket Name
-        Tier: Standard
-        Name: !Sub /${Project}/${Stage}/${Component}/log-bucket/name
-        Value: !Ref S3LogBucket
-        Tags:
-          Name: !Sub ${Project}-${Stage}-${Component}-log-bucket-name
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Description: !Sub Stores ${Project}-${Stage}-${Component} Log Bucket Name
+      Tier: Standard
+      Name: !Sub /${Project}/${Stage}/${Component}/log-bucket/name
+      Value: !Ref S3LogBucket
+      Tags:
+        Name: !Sub ${Project}-${Stage}-${Component}-log-bucket-name-param
 
   S3LogBucketArnParam:
-      Type: AWS::SSM::Parameter
-      Properties:
-        Type: String
-        Description: !Sub Stores ${Project}-${Stage}-${Component} Log Bucket Arn
-        Tier: Standard
-        Name: !Sub /${Project}/${Stage}/${Component}/log-bucket/arn
-        Value: !GetAtt S3LogBucket.Arn
-        Tags:
-          Name: !Sub ${Project}-${Stage}-${Component}-log-bucket-arn
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Description: !Sub Stores ${Project}-${Stage}-${Component} Log Bucket Arn
+      Tier: Standard
+      Name: !Sub /${Project}/${Stage}/${Component}/log-bucket/arn
+      Value: !GetAtt S3LogBucket.Arn
+      Tags:
+        Name: !Sub ${Project}-${Stage}-${Component}-log-bucket-arn
 
 Outputs:
   S3BLogBucketName:
