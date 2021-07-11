@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: Network template for JumpHost
+Description: Template for JumpHost
 
 Parameters:
   Project:
@@ -50,6 +50,14 @@ Resources:
       SecurityGroupIds:
         - !Ref JumpHostSecurityGroup
       SubnetId: !Ref PublicSubnetId
+      UserData:
+        Fn::Base64: |
+          #!/bin/bash
+          sudo yum update -y
+          sudo amazon-linux-extras enable postgresql11
+          sudo yum clean metadata
+          sudo yum install postgresql -y
+          sudo yum install jq -y
       Tags:
         - Key: Name
           Value: !Sub ${Project}-${Stage}-${Component}-jumphost-instance
@@ -76,6 +84,20 @@ Resources:
       Path: /
       ManagedPolicyArns:
         - arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
+      Policies:
+        - PolicyName: JumpHostPolicy
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Sid: GetSecretValue
+                Effect: Allow
+                Action:
+                  - secretsmanager:GetSecretValue
+                  - secretsmanager:DescribeSecret
+                  - secretsmanager:ListSecretVersionIds
+                  - secretsmanager:ListSecrets
+                Resource:
+                  - !Sub arn:aws:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:${Project}/${Stage}/*
 
 Outputs:
   JumpHostInstanceId:
@@ -84,4 +106,3 @@ Outputs:
   JumpHostInstancePublicIp:
     Description: Public IP address of the jumphost instance
     Value: !GetAtt JumpHostInstance.PublicIp
-
