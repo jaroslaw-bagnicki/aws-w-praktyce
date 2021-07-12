@@ -1,0 +1,74 @@
+[
+  {
+    "Description": "The name of the SSM parameter where the Id of the DbInstanceName is stored",
+    "ExportName": null,
+    "OutputKey": "DbInstanceNameParamName",
+    "OutputValue": "/memes-generator/dev/data/database/instance-name"
+  },
+  {
+    "Description": "Database Endpoint Port",
+    "ExportName": null,
+    "OutputKey": "DbEndpointPort",
+    "OutputValue": "5432"
+  },
+  {
+    "Description": "The name of the SSM parameter where the Id of the Database Name is stored",
+    "ExportName": null,
+    "OutputKey": "DbNameParamName",
+    "OutputValue": "/memes-generator/dev/data/database/database-name"
+  },
+  {
+    "Description": "Database Credentials Arn",
+    "ExportName": null,
+    "OutputKey": "DbAppCredentialsArn",
+    "OutputValue": "arn:aws:secretsmanager:eu-central-1:398814723438:secret:memes-generator/dev/data/rds/app-user-secret-WM87jD"
+  },
+  {
+    "Description": "The name of the SSM parameter where the Id of the Database App Credentials Arn is stored",
+    "ExportName": null,
+    "OutputKey": "DbAppCredentialsArnParamName",
+    "OutputValue": "/memes-generator/dev/data/database/app-credentials-arn"
+  },
+  {
+    "Description": "The name of the SSM parameter where the Id of the Database Endpoint Address is stored",
+    "ExportName": null,
+    "OutputKey": "DbEndpointAddressParamName",
+    "OutputValue": "/memes-generator/dev/data/database/endpoint-address"
+  },
+  {
+    "Description": "Database Endpoint Address",
+    "ExportName": null,
+    "OutputKey": "DbEndpointAddress",
+    "OutputValue": "memes-generator-dev-data-db.c7kg91jcagzf.eu-central-1.rds.amazonaws.com"
+  },
+  {
+    "Description": "The name of the SSM parameter where the Id of the Database Credentials Arn is stored",
+    "ExportName": null,
+    "OutputKey": "DbCredentialsArnParamName",
+    "OutputValue": "/memes-generator/dev/data/database/credentials-arn"
+  },
+  {
+    "Description": "Database Name",
+    "ExportName": null,
+    "OutputKey": "DbName",
+    "OutputValue": "memesgeneratordb"
+  },
+  {
+    "Description": "Database Credentials Arn",
+    "ExportName": null,
+    "OutputKey": "DbCredentialsArn",
+    "OutputValue": "arn:aws:secretsmanager:eu-central-1:398814723438:secret:memes-generator/dev/data/rds/masteruser-secret-5kpVBp"
+  },
+  {
+    "Description": "Database Instance Name",
+    "ExportName": null,
+    "OutputKey": "DbInstanceName",
+    "OutputValue": "memes-generator-dev-data-db"
+  },
+  {
+    "Description": "The name of the SSM parameter where the Id of the Database Endpoint Port is stored",
+    "ExportName": null,
+    "OutputKey": "DbEndpointPortParaName",
+    "OutputValue": "/memes-generator/dev/data/database/endpoint-port"
+  }
+]
