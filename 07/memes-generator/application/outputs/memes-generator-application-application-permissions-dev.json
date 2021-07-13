@@ -1,0 +1,14 @@
+[
+  {
+    "Description": "The name of the SSM parameter where the name of the instance role is stored",
+    "ExportName": null,
+    "OutputKey": "InstanceRoleParamName",
+    "OutputValue": "/memes-generator/dev/application/application-instance-role/name"
+  },
+  {
+    "Description": "The instance role name",
+    "ExportName": null,
+    "OutputKey": "InstanceRole",
+    "OutputValue": "memes-generator-application-applicati-InstanceRole-1KS1N69RCU9Z9"
+  }
+]

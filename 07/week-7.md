@@ -64,7 +64,8 @@
  - [x] Create in database 'app-user'. (_done: 7/13/21_)  
       Db user credentials retrieved from **Secrets Manager** with script [`10_Get-DbUsersCredentials.ps1`](10_Get-DbUsersCredentials.ps1). 
       ![img](https://i.imgur.com/yx2iTO2.png)
- - [ ] Add application IAM role.
+ - [x] Create application IAM role. (_done: 7/13/21_)  
+      Done with script: [`11_Create-IAMRoleForAppInstance.ps1`](11_Create-IAMRoleForAppInstance.ps1)
  - [ ] Add lounch template.
  - [ ] Deploy application EC2 instance.
 

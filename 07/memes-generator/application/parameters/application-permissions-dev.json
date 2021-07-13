@@ -1,0 +1,30 @@
+[
+    {
+        "ParameterKey": "Project",
+        "ParameterValue": "memes-generator"
+    },
+    {
+        "ParameterKey": "Stage",
+        "ParameterValue": "dev"
+    },
+    {
+        "ParameterKey": "Component",
+        "ParameterValue": "application"
+    },
+    {
+        "ParameterKey": "DbAppCredentialsSecretArn",
+        "ParameterValue": "/memes-generator/dev/data/database/app-credentials-arn"
+    },
+    {
+        "ParameterKey": "S3MemesBucket",
+        "ParameterValue": "/memes-generator/dev/application/memes-bucket/name"
+    },
+    {
+        "ParameterKey": "S3PicturesBucket",
+        "ParameterValue": "/memes-generator/dev/application/pictures-bucket/name"
+    },
+    {
+        "ParameterKey": "S3ConfigurationBucket",
+        "ParameterValue": "/memes-generator/dev/application/configuration-bucket/name"
+    }
+]
