@@ -27,3 +27,17 @@ $values = $secretNames | ForEach-Object {
 Write-Output "`nSecret values"
 Write-Output "-------------"
 Write-Output $values | Format-List
+
+# Interpolate psql command to add app user
+$admin = Get-SECSecretValue -SecretId "memes-generator/dev/data/rds/masteruser-secret" `
+    | Select-Object -ExpandProperty SecretString `
+    | ConvertFrom-Json
+
+$appUser =  Get-SECSecretValue -SecretId "memes-generator/dev/data/rds/app-user-secret" `
+    | Select-Object -ExpandProperty SecretString `
+    | ConvertFrom-Json
+
+Write-Output "`n"
+Write-Output "PGPASSWORD=$($admin.password) psql -U masteruser -h $($admin.host) -d $($admin.dbname) -c ""CREATE USER $($appUser.username) WITH ENCRYPTED PASSWORD '$($appUser.password)';"""
+Write-Output "`n"
+Write-Output "PGPASSWORD=$($admin.password) psql -U masteruser -h $($admin.host) -d $($admin.dbname) -c ""GRANT ALL PRIVILEGES ON DATABASE $($appUser.dbname) TO $($appUser.username);"""

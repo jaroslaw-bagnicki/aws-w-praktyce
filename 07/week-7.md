@@ -59,8 +59,11 @@
  - [x] Update Jumphost EC2 instance. (_done: 7/11/21_)  
     Instance updated with script: [`05_Update-Jumphost.ps1`](05_Update-JumpHost.ps1)  
     ![img](https://i.imgur.com/YlxgFig.png)
- - [ ] Deploy database RDS instance.
- - [ ] Create databse users.
+ - [x] Deploy database RDS instance. (_done: 7/13/21_)  
+      Deployed with script [`09_Deploy-DatabaseInstance.ps1`](09_Deploy-DatabaseInstance.ps1). 
+ - [x] Create in database 'app-user'. (_done: 7/13/21_)  
+      Db user credentials retrieved from **Secrets Manager** with script [`10_Get-DbUsersCredentials.ps1`](10_Get-DbUsersCredentials.ps1). 
+      ![img](https://i.imgur.com/yx2iTO2.png)
  - [ ] Add application IAM role.
  - [ ] Add lounch template.
  - [ ] Deploy application EC2 instance.
