@@ -66,7 +66,8 @@
       ![img](https://i.imgur.com/yx2iTO2.png)
  - [x] Create application IAM role. (_done: 7/13/21_)  
       Done with script: [`11_Create-IAMRoleForAppInstance.ps1`](11_Create-IAMRoleForAppInstance.ps1)
- - [ ] Add lounch template.
+ - [x] Deploy lounch template. (_done 7/13/21_)  
+     Done with script [`12_Deploy-LaunchTemplate.ps1`](12_Deploy-LaunchTemplate.ps1)
  - [ ] Deploy application EC2 instance.
 
 Aditional work:
