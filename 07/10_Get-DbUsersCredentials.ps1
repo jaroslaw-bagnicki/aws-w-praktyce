@@ -8,18 +8,22 @@ Set-DefaultAWSRegion 'eu-central-1' -Scope 'global'
 Set-MGContext -Project 'memes-generator' -Component 'data' -Stage 'dev'
 $ctx = Get-MGContext
 
-# Retrieve 
-$secretNames = @(
-    "$($ctx.Project)/$($ctx.Stage)/data/rds/masteruser-secret"
-    "$($ctx.Project)/$($ctx.Stage)/data/rds/app-user-secret"
-)
+# Get RDS secret names
+$secretNames = Get-SECSecretList `
+    | Where-Object Name -Like "$($ctx.Project)/$($ctx.Stage)/data/rds/*" `
+    | Select-Object -ExpandProperty Name
 
-try {
-    $credentials = $secretNames | ForEach-Object {
-        Get-SECSecretValue -SecretId $_ | Select-Object -ExpandProperty SecretString | ConvertFrom-Json
-    }
-} catch {
-    Write-Error $_.Exception.Message
+Write-Output "`nSecret names"
+Write-Output "------------"
+Write-Output $secretNames
+
+# Get secret values
+$values = $secretNames | ForEach-Object {
+    Get-SECSecretValue -SecretId $_ `
+    | Select-Object -ExpandProperty SecretString `
+    | ConvertFrom-Json
 }
 
-Write-Output $credentials | Format-List
+Write-Output "`nSecret values"
+Write-Output "-------------"
+Write-Output $values | Format-List
