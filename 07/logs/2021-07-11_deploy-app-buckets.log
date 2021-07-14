@@ -1,0 +1,9 @@
+[06:53:41] Creating [memes-generator-application-configuration-bucket-dev] stack ...
+[06:54:14] Stack [memes-generator-application-configuration-bucket-dev] with all resources create success.
+[06:54:22] [memes-generator-application-configuration-bucket-dev] stack outputs were exported to: ./memes-generator/application/outputs/memes-generator-application-configuration-bucket-dev.json
+[06:54:22] Creating [memes-generator-application-memes-bucket-dev] stack ...
+[06:54:55] Stack [memes-generator-application-memes-bucket-dev] with all resources create success.
+[06:55:01] [memes-generator-application-memes-bucket-dev] stack outputs were exported to: ./memes-generator/application/outputs/memes-generator-application-memes-bucket-dev.json
+[06:55:01] Creating [memes-generator-application-pictures-bucket-dev] stack ...
+[06:55:36] Stack [memes-generator-application-pictures-bucket-dev] with all resources create success.
+[06:55:37] [memes-generator-application-pictures-bucket-dev] stack outputs were exported to: ./memes-generator/application/outputs/memes-generator-application-pictures-bucket-dev.json

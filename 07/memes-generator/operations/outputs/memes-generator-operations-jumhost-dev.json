@@ -1,0 +1,14 @@
+[
+  {
+    "Description": "The ID of Jump Host Instance",
+    "ExportName": null,
+    "OutputKey": "JumpHostInstanceId",
+    "OutputValue": "i-0b6eaa4835b35a326"
+  },
+  {
+    "Description": "Public IP address of the jumphost instance",
+    "ExportName": null,
+    "OutputKey": "JumpHostInstancePublicIp",
+    "OutputValue": "3.122.120.246"
+  }
+]
