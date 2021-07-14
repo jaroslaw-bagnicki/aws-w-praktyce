@@ -1,0 +1,20 @@
+[
+  {
+    "Description": "The name of the SSM parameter where the latest version of the Application Launch Template is stored",
+    "ExportName": null,
+    "OutputKey": "ApplicationLaunchTemplateLatestVersionParamName",
+    "OutputValue": "/memes-generator/dev/application/application-launch-template/latest-version"
+  },
+  {
+    "Description": "The ID of the Application Launch Template",
+    "ExportName": null,
+    "OutputKey": "ApplicationLaunchTemplateId",
+    "OutputValue": "lt-0b72d0e279c971870"
+  },
+  {
+    "Description": "The name of the SSM parameter where the Id of the Application Launch Template is stored",
+    "ExportName": null,
+    "OutputKey": "ApplicationLaunchTemplateIdParamName",
+    "OutputValue": "/memes-generator/dev/application/application-launch-template/id"
+  }
+]
