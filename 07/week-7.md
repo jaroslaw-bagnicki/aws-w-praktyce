@@ -70,6 +70,12 @@
      Done with script [`12_Deploy-LaunchTemplate.ps1`](12_Deploy-LaunchTemplate.ps1)
  - [x] Deploy application EC2 instance. (_done 7/14/21_)  
      Done with script [`13_Deploy-AppInstance.ps1`](13_Deploy-AppInstance.ps1)
+ - [x] Connect to application instance via **Session Manager**  (_done 7/14/21_)  
+     ![img](https://i.imgur.com/KeyaRk8.png)
+ - [x] Generate first meme. (_done 7/14/21_)  
+     ![img](https://i.imgur.com/NpYSYC2.png)
+ - [x] Call application from jumhost. (_done 7/14/21_)  
+     ![img](https://i.imgur.com/Cxc7scW.png)
 
 Aditional work:
  - Orphaned S3 buckets were pruned with script: [`04_Remove-OrphanedS3Buckets.ps`](04_Remove-OrphanedS3Buckets.ps1)
