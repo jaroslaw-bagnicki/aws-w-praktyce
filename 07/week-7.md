@@ -66,9 +66,10 @@
       ![img](https://i.imgur.com/yx2iTO2.png)
  - [x] Create application IAM role. (_done: 7/13/21_)  
       Done with script: [`11_Create-IAMRoleForAppInstance.ps1`](11_Create-IAMRoleForAppInstance.ps1)
- - [x] Deploy lounch template. (_done 7/13/21_)  
+ - [x] Deploy lounch template. (_done 7/14/21_)  
      Done with script [`12_Deploy-LaunchTemplate.ps1`](12_Deploy-LaunchTemplate.ps1)
- - [ ] Deploy application EC2 instance.
+ - [x] Deploy application EC2 instance. (_done 7/14/21_)  
+     Done with script [`13_Deploy-AppInstance.ps1`](13_Deploy-AppInstance.ps1)
 
 Aditional work:
  - Orphaned S3 buckets were pruned with script: [`04_Remove-OrphanedS3Buckets.ps`](04_Remove-OrphanedS3Buckets.ps1)

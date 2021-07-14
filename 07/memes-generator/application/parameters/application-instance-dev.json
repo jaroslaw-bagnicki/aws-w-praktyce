@@ -1,0 +1,26 @@
+[
+    {
+        "ParameterKey": "Project",
+        "ParameterValue": "memes-generator"
+    },
+    {
+        "ParameterKey": "Stage",
+        "ParameterValue": "dev"
+    },
+    {
+        "ParameterKey": "Component",
+        "ParameterValue": "application"
+    },
+    {
+        "ParameterKey": "LaunchTemplateId",
+        "ParameterValue": "/memes-generator/dev/application/application-launch-template/id"
+    },
+    {
+        "ParameterKey": "LaunchTemplateLatestVersion",
+        "ParameterValue": "/memes-generator/dev/application/application-launch-template/latest-version"
+    },
+    {
+        "ParameterKey": "PrivateSubnetId",
+        "ParameterValue": "/memes-generator/dev/network/private-subnet-a/subnet-id"
+    }
+]
