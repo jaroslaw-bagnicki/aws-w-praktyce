@@ -1,0 +1,14 @@
+[
+  {
+    "Description": "The name of the SSM parameter where the Name of the  Bucket is stored",
+    "ExportName": null,
+    "OutputKey": "S3BucketParamName",
+    "OutputValue": "/memes-generator/dev/application/pictures-bucket/name"
+  },
+  {
+    "Description": "S3 Bucket bucket name",
+    "ExportName": null,
+    "OutputKey": "S3BucketName",
+    "OutputValue": "memes-generator-application-pictures-buc-s3bucket-134kk33me41i4"
+  }
+]
