@@ -1,0 +1,26 @@
+[
+  {
+    "Description": "The name of the SSM parameter where the Arn of the LoadBalancer is stored",
+    "ExportName": null,
+    "OutputKey": "LoadBalancerParamName",
+    "OutputValue": "/memes-generator/dev/network/alb/arn"
+  },
+  {
+    "Description": "The URL of the ALB",
+    "ExportName": null,
+    "OutputKey": "LoadBalancerUrl",
+    "OutputValue": "memes-generator-dev-network-alb-1698234674.eu-central-1.elb.amazonaws.com"
+  },
+  {
+    "Description": "The Arn of LoadBalancer",
+    "ExportName": null,
+    "OutputKey": "LoadBalancer",
+    "OutputValue": "arn:aws:elasticloadbalancing:eu-central-1:398814723438:loadbalancer/app/memes-generator-dev-network-alb/106be6e064bc1f00"
+  },
+  {
+    "Description": "The name of the SSM parameter where the Arn of the LoadBalancerUrl is stored",
+    "ExportName": null,
+    "OutputKey": "LoadBalancerUrlParamName",
+    "OutputValue": "/memes-generator/dev/network/alb/url"
+  }
+]
