@@ -1,0 +1,6 @@
+{
+  "Description": "Name of the autoscaling group",
+  "ExportName": null,
+  "OutputKey": "AutoScalingGroupName",
+  "OutputValue": "memes-generator-application-application-auto-scaling-dev-ApplicationAutoScalingGroup-1JOE09HQRPMTH"
+}

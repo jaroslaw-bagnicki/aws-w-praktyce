@@ -1,3 +1,6 @@
 [18:52:15] Creating [memes-generator-network-load-balancing-dev] stack ...
 [18:53:59] Stack [memes-generator-network-load-balancing-dev] with all resources create success.
 [18:54:00] [memes-generator-network-load-balancing-dev] stack outputs were exported to: ./memes-generator/network/outputs/memes-generator-network-load-balancing-dev.json
+[19:04:42] Creating [memes-generator-application-application-auto-scaling-dev] stack ...
+[19:06:14] Stack [memes-generator-application-application-auto-scaling-dev] with all resources create success.
+[19:06:14] [memes-generator-application-application-auto-scaling-dev] stack outputs were exported to: ./memes-generator/application/outputs/memes-generator-application-application-auto-scaling-dev.json
