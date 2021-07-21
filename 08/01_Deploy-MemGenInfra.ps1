@@ -27,17 +27,3 @@ Save-MGStackOutputs -StackName $networkStackName
 # Deploy Security Groups
 $securityGroupsStackName = Deploy-MGStack -Stack 'security-groups' -Template 'security-groups' -Params 'security-groups' -Wait
 Save-MGStackOutputs -StackName $securityGroupsStackName
-
-
-# -------------------- NAT GATEWAYS --------------------
-
-# Set context for 'network' component
-Set-MGContext -Project 'memes-generator' -Component 'network' -Stage 'dev'
-
-# Deploy NAT Gateway to first AZ
-$natGatewayAStackName = Deploy-MGStack -Stack 'nat-gateway-a' -Template 'nat-gateway' -Params 'nat-gateway-a' -Wait
-Save-MGStackOutputs -StackName $natGatewayAStackName
-
-# # Deploy NAT Gateway to second AZ
-$natGatewayBStackName = Deploy-MGStack -Stack 'nat-gateway-b' -Template 'nat-gateway' -Params 'nat-gateway-b' -Wait
-Save-MGStackOutputs -StackName $natGatewayBStackName

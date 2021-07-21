@@ -8,7 +8,7 @@ $projectName = "memes-generator"
  
 Write-Output "`nEC2 instances"
 Get-EC2Instance -Filter @{Name="tag:Project";Values=$projectName} `
-    | Select-Object -ExpandProperty Instances
+    | Select-Object -ExpandProperty Instances `
     | ForEach-Object {
         [PSCustomObject] @{
             InstanceId = $_.InstanceId
@@ -21,5 +21,5 @@ Get-EC2Instance -Filter @{Name="tag:Project";Values=$projectName} `
 
 Write-Output "`nRDS instances"
 Get-RDSDBInstance `
-    | Where-Object {$_.TagList.Where({$_.Key -eq "Project"}).Value -eq $projectName}
+    | Where-Object {$_.TagList.Where({$_.Key -eq "Project"}).Value -eq $projectName} `
     | Select-Object DBInstanceIdentifier, DBInstanceStatus
