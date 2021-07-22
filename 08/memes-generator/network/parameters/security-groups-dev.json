@@ -1,0 +1,30 @@
+[
+    {
+        "ParameterKey": "Project",
+        "ParameterValue": "memes-generator"
+    },
+    {
+        "ParameterKey": "Stage",
+        "ParameterValue": "dev"
+    },
+    {
+        "ParameterKey": "Component",
+        "ParameterValue": "network"
+    },
+    {
+        "ParameterKey": "VpcId",
+        "ParameterValue": "/memes-generator/dev/network/vpc/vpc-id"
+    },
+    {
+        "ParameterKey": "JumpHostAllowedCidrIpBlock",
+        "ParameterValue": "0.0.0.0/0"
+    },
+    {
+        "ParameterKey": "ApplicationPort",
+        "ParameterValue": "8080"
+    },
+    {
+        "ParameterKey": "DatabasePort",
+        "ParameterValue": "5432"
+    }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "Description": "Nat Gateway Id",
+    "ExportName": null,
+    "OutputKey": "NatGatewayId",
+    "OutputValue": "nat-05268b4bbcd8718ef"
+  },
+  {
+    "Description": "Nat Gateway EIP",
+    "ExportName": null,
+    "OutputKey": "NatGatewayEIP",
+    "OutputValue": "3.66.129.152"
+  }
+]

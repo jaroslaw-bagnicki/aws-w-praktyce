@@ -1,0 +1,26 @@
+[
+    {
+        "ParameterKey": "Project",
+        "ParameterValue": "memes-generator"
+    },
+    {
+        "ParameterKey": "Stage",
+        "ParameterValue": "dev"
+    },
+    {
+        "ParameterKey": "Component",
+        "ParameterValue": "network"
+    },
+    {
+        "ParameterKey": "AlbSecurityGroup",
+        "ParameterValue": "/memes-generator/dev/network/alb-sg/sg-id"
+    },
+    {
+        "ParameterKey": "PublicSubnetAId",
+        "ParameterValue": "/memes-generator/dev/network/public-subnet-a/subnet-id"
+    },
+    {
+        "ParameterKey": "PublicSubnetBId",
+        "ParameterValue": "/memes-generator/dev/network/public-subnet-b/subnet-id"
+    }
+]
